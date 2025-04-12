@@ -1,0 +1,219 @@
+/* تعيين box-sizing لجميع العناصر لضمان احتساب العرض بشكل صحيح */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --maincolor: hsla(7, 17%, 30%, 1); /* استخدام قيمة alpha بدون % */
+  --secondcolor: hsl(22, 29%, 51%);
+  --textcolor: hsl(35, 50%, 80%);
+}
+
+/* ملاحظة: قد تكون الخاصية التالية تجريبية */
+.cairo-nama {
+  font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  background-color: hsl(35, 50%, 80%);
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  user-select: none;
+  /* إزالة الخاصية غير القياسية user-zoom */
+  transition: all 0.2s ease;
+}
+
+/* لعناصر SVG من نوع text */
+text {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 16px;
+  fill: var(--textcolor);
+}
+
+#countdown {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+#mess {
+  font-weight: 400;
+  display: none;
+  margin-top: 20px;
+}
+
+#bas {
+  fill: var(--secondcolor);
+}
+
+#gonggong {
+  fill: var(--maincolor);
+}
+
+.inputs {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  gap: 10px; /* المسافة بين العناصر */
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px; /* المسافة بين الزرين */
+}
+
+/* تنسيق الـ slider */
+.slider {
+  margin: 25px 0;
+  -webkit-appearance: none;
+  width: 300px;
+  height: 3px;
+  border-radius: 1px;
+  background: var(--maincolor);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  display: block;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--maincolor);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--maincolor);
+  cursor: pointer;
+}
+
+/* تنسيق الأزرار */
+button {
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+  background-color: transparent;
+  border: 2px solid var(--maincolor);
+  color: var(--maincolor);
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 50%;  /* تحديد العرض بنسب مئوية */
+  /* باستخدام box-sizing: border-box; يتم احتساب padding والborder ضمن العرض */
+}
+
+/* إزالة الهوامش الإضافية التي قد تسبب فرقًا في الحجم */
+#toggleDarkMode {
+  margin: 0;  /* أو ضع قيمة موحدة إذا رغبت */
+}
+
+button:active {
+  background-color: var(--secondcolor);
+  box-shadow: 0 0 0 1px var(--maincolor);
+}
+
+/* في حال كنت تريد تعطيل الأزرار والـ slider عند حالة معينة، تأكد من تحديد العناصر بشكل صحيح */
+/* على سبيل المثال: */
+button:disabled,
+.slider:disabled {
+  pointer-events: none;
+}
+
+/* الوضع الليلي */
+body.dark-mode {
+  background-color: #121212;
+  color: #ecf0f1;
+}
+
+.dark-mode #gonggong {
+  fill: #000000;
+}
+
+.dark-mode button {
+  border-color: var(--textcolor);
+  color: #ecf0f1;
+}
+
+.dark-mode .slider {
+  background-color: var(--textcolor);
+}
+
+.dark-mode .slider::-webkit-slider-thumb {
+  background-color: #ecf0f1;
+}
+
+.dark-mode button:active {
+  background-color: #000000;
+}
+
+#loading {
+  transition: all 0.4s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  transition: all 0.4s ease;
+  border: 5px solid var(--secondcolor);
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}

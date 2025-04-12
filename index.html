@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="استكشف طرق التأمل وتنفس السلام على موقع Silence. اكتشف الهدوء والاسترخاء من خلال تقنيات فعّالة لتحسين رفاهيتك النفسية والجسدية.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="Hompageowjwj.css">
+  <script src="https://kit.fontawesome.com/aac312d2b1.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="website icon" type="png" href="logo3.png">
+  <link rel="icon" type="image/x-icon" href="logo3.png">
+  <title>silence</title>
+</head>
+
+<body>
+  <?php include('header.php'); ?>
+
+  <div id="loading">
+    <div class="loader"></div>
+  </div>
+  <div id="header" class="header">
+    <img src="logopng.png" id="img">
+    <p id="headerp">silence</p>
+    <input type="checkbox" id="main-navigation-toggle" class="btn btn--close" title="Toggle main navigation" />
+    <label for="main-navigation-toggle">
+      <span></span>
+    </label>
+    <nav id="main-navigation" class="nav-main">
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" href="index.html">الصفحة الرئيسية</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="about2.html">من نحن؟</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/contact /contact.html">تواصل معنا</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="main-container">
+    <div class="row">
+      <div id="box" class="box one" onclick="window.location.href='التنفس مربع الزمن.html';">
+        <div class="circle">
+          <div class="circle insed">
+            <i class="fa-regular fa-square"></i>
+            <h1>التنفس مربع الزمن</h1>
+            <p>يقلل من التوتر ويحسن التركيز ويعزز الاسترخاء.</p>
+          </div>
+        </div>
+      </div>
+      <div class="box two" onclick="window.location.href='التنفس المنتظم.html';">
+        <div class="circle">
+          <div class="circle insed">
+            <i class="fa-solid fa-star"></i>
+            <h1>التنفس المنتظم</h1>
+            <p>يساعد على تحسين وظائف الجهاز العصبي، وتقليل التوتر والقلق.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="box three" onclick="window.location.href='تأمل التنفس 4-7-8.html';">
+        <div class="circle">
+          <div class="circle insed">
+            <i class="fa-brands fa-pagelines"></i>
+            <h1>التنفس 4-7-8</h1>
+            <p>يساعد في تقليل القلق وتعزيز الاسترخاء ويحسن النوم.</p>
+          </div>
+        </div>
+      </div>
+      <div class="box four" onclick="window.location.href ='اختبار حبس النفس.html';">
+        <div class="circle">
+          <div class="circle insed">
+            <i class="fa-solid fa-moon"></i>
+            <h1>مؤقت التأمل</h1>
+            <p>يمكنك ضبط الوقت الذي تريد قضائه في التأمل.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="attribution"><i class="fa fa-code"></i> WITH <i class="fa fa-heart"></i> BY KARRAR©</p>
+  </footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      const loading = document.getElementById('loading');
+      const content = document.getElementById('content');
+      loading.style.display = 'none'; // إخفاء عنصر التحميل
+      content.style.display = 'block'; // عرض محتوى الموقع
+    });
+  </script>
+ 
+  <script>
+    const toggleModal = () => {
+      const bodyClassList = document.body.classList;
+      if (bodyClassList.contains("open")) {
+        bodyClassList.remove("open");
+        bodyClassList.add("closed");
+      } else {
+        bodyClassList.remove("closed");
+        bodyClassList.add("open");
+      }
+    }
+  </script>
+
+  <script>
+    var myImage = document.getElementById("img");
+
+    // أضف مستمع حدث للنقر على الصورة
+    myImage.onclick = function() {
+      // قم بتحويل المستخدم إلى الصفحة المحددة
+      window.location.href = "index.html";
+    };
+
+    // تحديد العنصر الذي تريد حذفه
+  </script>
+
+
+  <script src="about.js"></script>
+</body>

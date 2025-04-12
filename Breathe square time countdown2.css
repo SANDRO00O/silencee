@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  transition: all .4s ease-in-out;
+  padding: 0;
+  margin: 0;
+}
+
+.cairo-nama {
+  font-family: "Cairo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #000000;
+  font-family: "Cairo", sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  margin: 0 auto;
+  text-align: center;
+  padding: 5%; /* تم تقليل الحواف لجعلها أكثر مرونة */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+.hide2 {
+  height: 1vh;
+  transition: .4s;
+  opacity: 0%;
+  pointer-events: none;
+  position: absolute;
+}
+
+.box {
+  height: 7.5vh;
+  width: 100%;
+  background-color: #121212;
+}
+
+#op {
+  height: 40vh; /* تعديل الارتفاع لجعله أكثر تجاوبًا */
+  width: 40vh;
+  background-color: #372123;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle {
+  opacity: 1;
+  transition: 0.4s ease-in-out;
+  position: absolute;
+  height: 15vh; /* تعديل الحجم لجعله أكثر تجاوبًا */
+  width: 15vh;
+  background-color: #64494C4A;
+  border-radius: 50%;
+  animation: zoomInOut 5s infinite alternate ease-in-out;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+.countdown {
+  font-size: 7vh;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.message {
+  font-size: 3vh;
+  text-align: center;
+  opacity: 1;
+  margin-top: 5%;
+  color: #FFFFFF;
+}
+
+button {
+  font-size: 3.5vh; /* تعديل الحجم لجعله أكثر تجاوبًا */
+  color: #FFFFFF;
+  background-color: #633B3F;
+  text-align: center;
+  transition: .4s;
+  height: 40%;
+  width: 40%;
+  border: 2px solid #633B3F;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.ready {
+  font-size: 2.5vh; /* تعديل الحجم لجعله أكثر تجاوبًا */
+  color: #000000;
+  height: 10vh;
+  width: 50%;
+  background-color: #2B4440;
+  text-align: center;
+}
+
+h2,
+h3 {
+  font-size: 2.5vw;
+  color: #A8A8A8;
+  direction: rtl;
+  font-family: "Cairo", sans-serif;
+}
+
+/* إضافة media queries للتجاوب مع الشاشات المختلفة */
+@media (max-width: 768px) {
+  #op {
+    height: 35vh;
+    width: 35vh;
+  }
+
+  #circle {
+    height: 12vh;
+    width: 12vh;
+  }
+
+  .countdown {
+    font-size: 6vh;
+  }
+
+  .message {
+    font-size: 2.5vh;
+  }
+
+  button {
+    font-size: 3vh;
+  }
+
+  .ready {
+    font-size: 2.2vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #op {
+    height: 45vh;
+    width: 45vh;
+  }
+
+  #circle {
+    height: 20vh;
+    width: 20vh;
+  }
+
+  .countdown {
+    font-size: 7vh;
+  }
+
+  .message {
+    font-size: 3vh;
+  }
+
+  button {
+    font-size: 3.5vh;
+  }
+
+  .ready {
+    font-size: 3vh;
+  }
+}

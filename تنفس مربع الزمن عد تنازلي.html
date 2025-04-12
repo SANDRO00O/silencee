@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Countdown Timer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Breathe square time countdown2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mada:wght@300&display=swap" rel="stylesheet">
+
+  <title>تأمل التنفس بزمن 4-7-8</title>
+</head>
+
+<body>
+    <container class="main-container">
+
+  <div class="circle" id="op">
+    <div class="countdown"></div>
+    <button onclick="startCountdown()" id="startButton">ابدأ</button>
+       <div class="circle hide" id="circle"></div>
+  </div>
+  <div class="message hide" id="inhaleMessage">قم بالشهيق</div>
+  <div class="message hide" id="holdMessage">احبس نفسك</div>
+  <div class="message hide" id="exhaleMessage">قم بالزفير</div>
+  <div class="message hide" id="newCountMessage">احبس نفسك</div>
+    </container>
+
+  <script>
+    var count;
+    var circle = document.getElementById('circle');
+    var countdownElem = document.querySelector('.countdown');
+    var inhaleMessage = document.getElementById('inhaleMessage');
+    var holdMessage = document.getElementById('holdMessage');
+    var exhaleMessage = document.getElementById('exhaleMessage');
+    var newCountMessage = document.getElementById('newCountMessage'); // اختيار عنصر HTML الذي يعرض رسالة العد الجديد
+    var startButton = document.getElementById('startButton');
+
+    function startCountdown() {
+      circle.classList.remove('hide');
+      inhaleMessage.classList.remove('hide');
+      startButton.classList.add('hide2');
+      count = 4;
+      countdownElem.textContent = count;
+      var countdownInterval = setInterval(function() {
+        count--;
+        countdownElem.textContent = count;
+        if (count === 0) {
+          clearInterval(countdownInterval);
+          inhaleMessage.classList.add('hide');
+          exhaleMessage.classList.remove('hide');
+          var count2 = 4;
+          countdownElem.textContent = count2;
+          var countdownInterval2 = setInterval(function() {
+            count2--;
+            countdownElem.textContent = count2;
+            if (count2 === 0) {
+              clearInterval(countdownInterval2);
+            exhaleMessage.classList.add('hide');
+
+              ('hide'); // إظهار عنصر HTML الذي يعرض رسالة العد الجديد
+              // إخفاء عنصر HTML الذي يعرض رسالة العد الجديد
+              startCountdown(); // تشغيل العدادات مرة أخرى بدءًا من 4
+            }
+          }, 1000);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+
+</html>

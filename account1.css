@@ -1,0 +1,172 @@
+body {
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+
+/* الترويسة */
+header {
+  background-color: #262523;
+  color: #fff;
+  text-align: center;
+  padding: 1.5em;
+  border-radius: 20px;
+  font-size: 2.4vw;
+  font-family: 'Cairo', sans-serif;
+  width: 94%;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7%;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+}
+
+.profile-name {
+  margin-top: 3.5%;
+  font-size: 4vw;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+::selection {
+  background: #727272;
+  color: #000000;
+
+}
+
+
+main {
+  width: 100%;
+  margin: auto;
+
+}
+
+h2 {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 5vw;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+section h2 {
+  border-bottom: 5px solid #FFFFFF;
+  padding-bottom: 0.5em;
+  border-radius: 100px;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+h3 {
+
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 5vw;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+section h3 {
+  border-bottom: 5px solid #FFFFFF;
+  padding-bottom: 0.5em;
+  border-radius: 100px;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #262523;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 15px;
+
+}
+
+a {
+  font-size: 5vw;
+  text-decoration: none;
+  color: #000000;
+  display: inline-block;
+  padding: 1em 1em;
+  background-color: #727272;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+
+}
+
+a:active {
+  background-color: #DDDDDD;
+  transform: scale(1.01);
+}
+
+a:visited {
+  color: #000000;
+}
+
+i:active {
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+i {
+  font-size: 5vw;
+  position: absolute;
+  left: 20%;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+footer {
+  background-color: #727272;
+  text-align: center;
+  padding: 1%;
+  position: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Cairo', sans-serif;
+}
+
+footer p {
+  font-size: 2.5vw;
+  color: #000000;
+  font-family: 'Cairo', sans-serif;
+
+}
+
+#secondary {
+  font-size: 5vw;
+  text-decoration: none;
+  color: #000000;
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #727272;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+  font-family: 'Cairo', sans-serif;
+
+}
+
+#secondary:active {
+  background-color: #FFFFFF;
+}

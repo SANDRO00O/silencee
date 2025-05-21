@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 مربعات ريسبونسيف</title>
+    <style>
+        /* إعادة الضبط الأساسية */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* الكونتينر الرئيسي */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        /* ستايل المربعات */
+        .square {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            position: relative;
+            aspect-ratio: 1; /* للحفاظ على شكل مربع */
+        }
+
+        /* محتوى المربع */
+        .content {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(100% - 40px);
+        }
+
+        .title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .text {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* ريسبونسيف للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .square {
+                aspect-ratio: unset;
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square">
+            <div class="content">
+                <h2 class="title">العنوان 1</h2>
+                <p class="text">هذا النص توضيحي للمربع الأول</p>
+            </div>
+        </div>
+        
+        <div class="square">
+            <div class="content">
+                <h2 class="title">العنوان 2</h2>
+                <p class="text">هذا النص توضيحي للمربع الثاني</p>
+            </div>
+        </div>
+        
+        <div class="square">
+            <div class="content">
+                <h2 class="title">العنوان 3</h2>
+                <p class="text">هذا النص توضيحي للمربع الثالث</p>
+            </div>
+        </div>
+        
+        <div class="square">
+            <div class="content">
+                <h2 class="title">العنوان 4</h2>
+                <p class="text">هذا النص توضيحي للمربع الرابع</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
